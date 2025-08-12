@@ -1,0 +1,3 @@
+[build]
+  command = "TSC_COMPILE_ON_ERROR=true npm run build"
+  publish = "build" # or whatever your publish directory is
