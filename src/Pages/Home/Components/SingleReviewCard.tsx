@@ -1,16 +1,18 @@
-import { Box, Typography } from "@mui/material"
-import starIcon from "../../../assets/Header/starIcon.svg"
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import starIcon from "../../../assets/Header/starIcon.svg";
 
 interface ISingleReviewCardProps {
-    review: any
+    review: any;
 }
 
 const SingleReviewCard = ({ review }: ISingleReviewCardProps) => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+    const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
     return (
         <Box
             sx={{
                 minWidth: "300px",
-
             }}
         >
             <Box
@@ -24,7 +26,7 @@ const SingleReviewCard = ({ review }: ISingleReviewCardProps) => {
                     sx={{
                         display: "flex",
                         alignItems: "center",
-                        gap: "10px",
+                        gap: isMobile ? "8px" : "10px",
                     }}
                 >
                     {[...Array(review.star)].map((_, index) => (
@@ -32,39 +34,43 @@ const SingleReviewCard = ({ review }: ISingleReviewCardProps) => {
                             key={index}
                             src={starIcon}
                             alt="star"
-                            style={{ width: "20px", height: "20px" }}
+                            style={{ width: isMobile ? "12px" : "20px", height: isMobile ? "12px" : "20px" }}
                         />
                     ))}
                 </Box>
             </Box>
             <Box
                 sx={{
-                    marginTop: "10px",
+                    marginTop: isMobile ? "0px" : "10px",
                     color: "#FFFFFF",
                     fontFamily: '"Metropolis", sans-serif',
                 }}
             >
                 <Typography
                     sx={{
-                        fontSize: "22px",
+                        fontSize: { xs: "14px", sm: "14px", md: "22px" },
                         fontWeight: 400,
                         color: "#FFFFFF",
                         fontFamily: '"Metropolis", sans-serif',
                         lineHeight: "24px",
                     }}
-                >{review.review}</Typography>
+                >
+                    {review.review}
+                </Typography>
                 <Typography
                     sx={{
-                        fontSize: "22px",
+                        fontSize: { xs: "14px", sm: "14px", md: "22px" },
                         fontWeight: 500,
                         color: "#FFFFFF",
                         fontFamily: '"Metropolis", sans-serif',
                         marginTop: "10px",
                     }}
-                >- {review.name}</Typography>
+                >
+                    - {review.name}
+                </Typography>
             </Box>
         </Box>
-    )
-}
+    );
+};
 
-export default SingleReviewCard
+export default SingleReviewCard;

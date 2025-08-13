@@ -50,9 +50,9 @@ const ProjectCard = ({ title, smallTitle, description, image, bgColor, imageWidt
     const style = getCardStyle();
 
     // Adjust card dimensions based on screen size
-    const cardHeight = isMobile ? 320 : isTablet ? 320 : 360; // Increased mobile height for full text
-    const adjustedImageTop = isMobile ? -40 : imageTop;
-    const adjustedImageWidth = isMobile ? "70%" : imageWidth;
+    const cardHeight = isMobile ? 470 : isTablet ? 320 : 360; // Increased mobile height for full text
+    const adjustedImageTop = isMobile ? -120 : imageTop;
+    const adjustedImageWidth = isMobile ? "80%" : imageWidth;
 
     return (
         <Box
@@ -61,6 +61,7 @@ const ProjectCard = ({ title, smallTitle, description, image, bgColor, imageWidt
                 height: cardHeight,
                 width: "100%",
                 borderRadius: { xs: "12px", md: "19.26px" },
+
             }}
         >
             {/* Base color background */}
@@ -217,7 +218,7 @@ const ProjectCard = ({ title, smallTitle, description, image, bgColor, imageWidt
                         color: style.textColor,
                         fontFamily: '"Metropolis", sans-serif',
                         fontWeight: 500,
-                        fontSize: { xs: 18, sm: 22, md: 28 },
+                        fontSize: { xs: 34, sm: 34, md: 28 },
                         textShadow: "0px 1px 3px rgba(0,0,0,0.3)", // Add shadow for better text visibility
                     }}
                 >
@@ -230,8 +231,8 @@ const ProjectCard = ({ title, smallTitle, description, image, bgColor, imageWidt
                             color: style.textColor,
                             fontFamily: '"Cormorant", serif',
                             fontStyle: "italic",
-                            fontSize: { xs: 14, sm: 18, md: 28 },
-                            marginTop: { xs: "-10px", md: "-20px" },
+                            fontSize: { xs: 34, sm: 34, md: 28 },
+                            marginTop: { xs: "-20px", md: "-20px" },
                             textShadow: "0px 1px 2px rgba(0,0,0,0.3)",
                             opacity: 0.9,
                         }}
@@ -244,11 +245,12 @@ const ProjectCard = ({ title, smallTitle, description, image, bgColor, imageWidt
                     sx={{
                         color: style.textColor,
                         fontFamily: '"Metropolis", sans-serif',
-                        fontSize: { xs: 10, md: 10 },
+                        fontSize: { xs: 12, md: 10 },
                         mt: { xs: 0.5, md: 1 },
                         display: "block", // Always show on all devices
                         opacity: 0.9,
                         lineHeight: 1.4,
+                        marginBottom: { xs: 3, md: 0 },
                         // Removed WebkitLineClamp limit for mobile
                         // ...(isMobile ? {} : {
                         //     overflow: "hidden",
@@ -399,7 +401,7 @@ const Projects = () => {
                                             "calc(25% - 24px)",
                                 flexGrow: 0,
                                 flexShrink: 0,
-                                marginBottom: { xs: 2, sm: 0 },
+                                marginBottom: { xs: 5, sm: 0 },
                             }}
                         >
                             <ProjectCard

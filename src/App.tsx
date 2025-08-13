@@ -7,6 +7,7 @@ import Home from './Pages/Home'
 import WhatWeBuild from './Pages/Home/Components/WhatWeBuild'
 import Projects from './Pages/Home/Components/Projects'
 import CoreValues from './Pages/Home/Components/CoreValues'
+import Footer from './Pages/Home/Components/Footer'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <WhatWeBuild />
       <Projects />
       <CoreValues />
+      <Footer />
     </Box>
   )
 }

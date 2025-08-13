@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
 import SingleReviewCard from "./SingleReviewCard";
 
 const Reviews = () => {
@@ -79,7 +78,7 @@ const Reviews = () => {
                         writingMode: 'vertical-rl',
                         transform: 'rotate(180deg)',
                         textOrientation: 'mixed',
-                        fontSize: '33px',
+                        fontSize: { xs: '20px', sm: '20px', md: '33px' },
                         fontWeight: 400,
                         letterSpacing: '1px',
                     }}
