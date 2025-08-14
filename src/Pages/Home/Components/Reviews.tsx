@@ -5,45 +5,45 @@ const Reviews = () => {
     const reviews = [
         {
             star: 5,
-            name: "John Doe",
+            name: "Rohan Sharma",
             review:
-                "DreamRoots transformed our ideas into reality with unmatched engineering expertise and innovative solutions.",
+                "Excellent hardware quality, team was very cooperative and supportive throughout the project.",
         },
         {
             star: 5,
-            name: "John Doe",
+            name: "Emily Chen",
             review:
-                "DreamRoots transformed our ideas into reality with unmatched engineering expertise and innovative solutions.",
+                "Very good product, exceeded expectations, and customer support was fantastic too always helpful.",
         },
         {
             star: 5,
-            name: "John Doe",
+            name: "Kunal Jain",
             review:
-                "DreamRoots transformed our ideas into reality with unmatched engineering expertise and innovative solutions.",
+                "Good experience with the hardware team, product quality was top-notch and reliable too.",
         },
         {
             star: 5,
-            name: "John Doe",
+            name: "Liam Brown",
             review:
-                "DreamRoots transformed our ideas into reality with unmatched engineering expertise and innovative solutions.",
+                "Hardware performance was impressive, team was professional and delivered on time always great.",
         },
         {
             star: 5,
-            name: "John Doe",
+            name: "Priya Patel",
             review:
-                "DreamRoots transformed our ideas into reality with unmatched engineering expertise and innovative solutions.",
+                "Fantastic product, hardware team was knowledgeable and very helpful throughout the process.",
         },
         {
             star: 5,
-            name: "John Doe",
+            name: "Sofia Rodriguez",
             review:
-                "DreamRoots transformed our ideas into reality with unmatched engineering expertise and innovative solutions.",
+                "Great hardware quality, team was responsive and worked efficiently to meet deadlines always.",
         },
         {
             star: 5,
-            name: "John Doe",
+            name: "Amit Kumar",
             review:
-                "DreamRoots transformed our ideas into reality with unmatched engineering expertise and innovative solutions.",
+                "Excellent product, hardware team was very supportive and provided great solutions always helpful.",
         },
     ];
 
@@ -94,8 +94,16 @@ const Reviews = () => {
                     gap: "20px",
                     overflowX: "auto",
                     width: "100%",
-                    paddingLeft: "80px", // Add padding to account for the width of the blue bar
-                    boxSizing: "border-box" // Make sure padding is included in width calculation
+                    paddingLeft: "80px",
+                    boxSizing: "border-box",
+                    // Add these styles to hide the scrollbar
+                    "&::-webkit-scrollbar": {
+                        display: "none"
+                    },
+                    // For Firefox
+                    scrollbarWidth: "none",
+                    // For IE and Edge
+                    msOverflowStyle: "none"
                 }}
             >
                 {reviews.map((review, index) => (

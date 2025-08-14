@@ -1,11 +1,19 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import React from "react";
+import starImg from "../../../assets/star.svg"
 
 const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
+  const scrollToFooter = () => {
+    const footerElement = document.getElementById("footer");
+    if (footerElement) {
+      footerElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
 
   return (
     <Box
@@ -24,17 +32,30 @@ const Navbar = () => {
     >
       {/* Logo Section */}
       <Box>
-        <Typography
+        <Box
           sx={{
-            fontSize: { xs: "24px", sm: "28px", md: "34.8px" },
-            fontWeight: 700,
-            color: "#FFFFFF",
-            fontFamily: "Kumbh Sans, sans-serif",
-            lineHeight: 1.1,
+            position: "relative",
           }}
         >
-          DREAMROOTS
-        </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: "24px", sm: "28px", md: "34.8px" },
+              fontWeight: 700,
+              color: "#FFFFFF",
+              fontFamily: "Kumbh Sans, sans-serif",
+              lineHeight: 1.1,
+            }}
+          >
+            DREAMROOTS
+          </Typography>
+          <img src={starImg} alt="star" style={{
+            position: "absolute",
+            top: -10,
+            right: -16,
+            width: "20px",
+
+          }} />
+        </Box>
         <Typography
           sx={{
             fontSize: { xs: "14px", sm: "16px", md: "20px" },
@@ -67,6 +88,8 @@ const Navbar = () => {
               background: "rgba(255, 255, 255, 0.1)",
             },
           }}
+
+          onClick={scrollToFooter}
         >
           <Typography
             sx={{

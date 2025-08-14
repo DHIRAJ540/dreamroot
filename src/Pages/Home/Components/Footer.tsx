@@ -6,6 +6,7 @@ import { useTheme } from "@mui/material/styles";
 import appStoreImg from "../../../assets/Footer/appleStore.png";
 import googlePlayImg from "../../../assets/Footer/googlePlay.png";
 import wave1Svg from "../../../assets/Footer/wave1.svg";
+import starImg from "../../../assets/star.svg";
 
 const Footer = () => {
     const theme = useTheme();
@@ -21,6 +22,7 @@ const Footer = () => {
                 position: "relative",
                 overflow: "hidden",
             }}
+            id={"footer"}
         >
             {/* Wave SVG overlay - white with 3% opacity */}
             <Box
@@ -35,10 +37,9 @@ const Footer = () => {
                     bottom: 0,
                     width: "100%",
                     height: "auto",
-                    opacity: .8, // 3% opacity as specified
+                    opacity: 0.8, // 3% opacity as specified
                     zIndex: 1,
                     pointerEvents: "none", // Allows clicks to pass through
-
                 }}
             />
 
@@ -92,7 +93,13 @@ const Footer = () => {
                             About
                         </Typography>
 
-                        <Box >
+                        <Box
+                            sx={{
+                                position: "relative",
+                                width: "max-content",
+                                mx: { xs: "auto", md: 0 },
+                            }}
+                        >
                             <Typography
                                 sx={{
                                     fontSize: { xs: "24px", md: "44px" },
@@ -104,6 +111,11 @@ const Footer = () => {
                             >
                                 DREAMROOTS
                             </Typography>
+                            <img src={starImg} alt="star" style={{
+                                position: "absolute",
+                                top: -10,
+                                right: -20
+                            }} />
                         </Box>
 
                         <Typography
@@ -129,9 +141,8 @@ const Footer = () => {
                                 textAlign: { xs: "center", md: "left" },
                             }}
                         >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
-                            aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                            himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
+                            Expertise in hardware and software integration, delivering innovative solutions with precision, quality,
+                            and reliability, driven by technology excellence always.
                         </Typography>
                     </Box>
 
@@ -199,7 +210,7 @@ const Footer = () => {
                 </Box>
 
                 {/* Mobile-only address and contact section */}
-                {/* {isMobile && (
+                {isMobile && (
                     <Box sx={{ mt: 3 }}>
                         <Typography
                             sx={{
@@ -221,7 +232,7 @@ const Footer = () => {
                                 mb: 3,
                             }}
                         >
-                            10th Main, 1st Floor, Indira Nagar, Bangalore - 560037,
+                            No. 810, 24th Cross, 51th Main, Kumaraswamy Layout, Bangalore - 560078,
                             <br />
                             Karnataka, India
                         </Typography>
@@ -266,10 +277,10 @@ const Footer = () => {
                                 fontFamily: '"Metropolis", sans-serif',
                             }}
                         >
-                            Team@Dreamroots.Fun
+                            team@dreamroots.Fun
                         </Typography>
                     </Box>
-                )} */}
+                )}
             </Box>
 
             {!isMobile && (
@@ -302,7 +313,7 @@ const Footer = () => {
                                 fontFamily: '"Metropolis", sans-serif',
                             }}
                         >
-                            10th Main, 1st Floor, Indira Nagar, Bangalore - 560037,
+                            No. 810, 24th Cross, 51th Main, Kumaraswamy Layout, Bangalore - 560078,
                             <br />
                             Karnataka, India
                         </Typography>
@@ -350,7 +361,7 @@ const Footer = () => {
                                 textDecoration: "underline",
                             }}
                         >
-                            Team@Dreamroots.Fun
+                            team@dreamroots.fun
                         </Typography>
                     </Box>
                 </Box>

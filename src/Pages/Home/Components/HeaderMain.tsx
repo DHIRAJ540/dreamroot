@@ -10,6 +10,14 @@ const HeaderMain = () => {
     const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
     const isMediumScreen = useMediaQuery(theme.breakpoints.between("md", "lg"));
 
+    // Add this function to handle scrolling to the footer
+    const scrollToFooter = () => {
+        const footerElement = document.getElementById("footer");
+        if (footerElement) {
+            footerElement.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <Box
             sx={{
@@ -105,8 +113,8 @@ const HeaderMain = () => {
                                 sx={{
                                     fontFamily: '"Delphin", sans-serif',
                                     fontSize: { xs: "50px", sm: "70px", md: "85px", lg: "102px" },
-                                    color: { xs: "#FFE522", sm: "#FFE522", md: "#FF8412", },
-                                    marginTop: { xs: "-20px", md: "-30px", },
+                                    color: { xs: "#FFE522", sm: "#FFE522", md: "#FF8412" },
+                                    marginTop: { xs: "-20px", md: "-30px" },
                                     fontWeight: 600,
                                     lineHeight: 1.1,
                                 }}
@@ -116,6 +124,7 @@ const HeaderMain = () => {
                         </Box>
 
                         <Button
+                            onClick={scrollToFooter}
                             sx={{
                                 paddingInline: { xs: "25px", sm: "35px" },
                                 paddingBlock: { xs: "12px", sm: "20px" },
@@ -166,7 +175,7 @@ const HeaderMain = () => {
                                     width: "100%",
                                     height: "auto",
                                     maxWidth: "100%",
-                                    objectFit: "contain"
+                                    objectFit: "contain",
                                 }}
                             />
                         </Box>
